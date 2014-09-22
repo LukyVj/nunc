@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300);
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -4446,66 +4447,66 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0; }
+.btn-call-to-action {
+  background: transparent;
+  padding: 1em;
+  border: 3px solid #F5F1E7;
+  color: #F5F1E7; }
 
 /* Space out content a bit */
+html, body {
+  float: left;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
 body {
   padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  font-family: 'Open Sans', helvetica neue, sans-serif; }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header, .marketing, .footer {
-  padding-left: 15px;
-  padding-right: 15px; }
+.container.main-view {
+  margin: auto;
+  float: none;
+  display: none; }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  /* Make the masthead heading the same height as the navigation */ }
-  .header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px; }
+.nunc-hello, .nunc-communication {
+  height: 100%;
+  width: 100%;
+  margin: auto; }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5; }
+.nunc-hello {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0; }
+  .nunc-hello:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: url(http://38.media.tumblr.com/facc96f9c1a78b983bf1624f5f0e70d1/tumblr_n7qhtcBPvQ1sfie3io1_1280.jpg) no-repeat bottom center;
+    background-size: cover; }
+  .nunc-hello .jumbotron {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    width: 100%;
+    background: #7AB1BB;
+    box-shadow: 0 -20px 0 0 rgba(122, 177, 187, 0.2), 0 -16px 0 0 rgba(122, 177, 187, 0.4), 0 -12px 0 0 rgba(122, 177, 187, 0.6), 0 -8px 0 0 rgba(122, 177, 187, 0.8), 0 -6px 0 0 #7ab1bb;
+    color: #F5F1E7;
+    margin: 0; }
+    .nunc-hello .jumbotron h1 {
+      font-weight: 800; }
+    .nunc-hello .jumbotron .nunc-start {
+      position: absolute;
+      right: 0;
+      margin: -10em 3em; }
+      .nunc-hello .jumbotron .nunc-start .btn {
+        font-size: 3em; }
 
-.container-narrow > hr {
-  margin: 30px 0; }
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5; }
-  .jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px; }
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0; }
-  .marketing p + h4 {
-    margin-top: 28px; }
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  /* Space out the masthead */
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .container {
-    max-width: 730px; }
-  .header, .marketing, .footer {
-    padding-left: 0;
-    padding-right: 0; }
-  .header {
-    margin-bottom: 30px; }
-  .jumbotron {
-    border-bottom: 0; } }
+.nunc-communication {
+  display: none; }

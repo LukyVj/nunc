@@ -21,7 +21,7 @@
     <!-- endbuild -->
 
     <style>
-     .join {
+       .join {
         display: inline;
     }
     .quit {
@@ -45,23 +45,38 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
 
-            <div class="container">
-                <header>
-                    <span class="url-room"></span>
-                </header>
-                <div>
-                    <input type="button" value="Join Conference" onclick="joinRoom();" class="join btn btn-success" \>
-                    <input type="text" id="slug">
-                    <input type="button" value="Quit Conference" onclick="quitRoom();" class="quit btn btn-danger" \>
+            <div class="container main-view">
+
+                <div class="nunc-hello">
+                    <div class="jumbotron">
+                        <h1>NUNC</h1>
+                        <h2><i>— Latin word for now</i></h2>
+
+                        <div class="nunc-start">
+                            <a href="#" class="btn btn-primary btn-call-to-action" id="start-nunc">Start NUNC</a>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="well">
-                    <div class="messages"></div>
-                    <div class="video-container"></div>
-                </div>
+                <div class="nunc-communication">
+                    <header>
+                        <span class="url-room"></span>
+                    </header>
+                    <div>
+                        <input type="button" value="Join Conference" onclick="joinRoom();" class="join btn btn-success" \>
+                        <input type="text" id="slug">
+                        <input type="button" value="Quit Conference" onclick="quitRoom();" class="quit btn btn-danger" \>
+                    </div>
 
-                <div class="messages">
-                    <div id="messages" contenteditable></div>
+                    <div class="well">
+                        <div class="messages"></div>
+                        <div class="video-container"></div>
+                    </div>
+
+                    <div class="messages">
+                        <div id="messages" contenteditable></div>
+                    </div>
                 </div>
             </div>
 
