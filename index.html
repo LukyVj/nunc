@@ -50,11 +50,15 @@
                     <span class="url-room"></span>
                 </header>
                 <div>
-                    <input type="button" value="Join Conference" onclick="joinRoom();" class="join" \>
+                    <input type="button" value="Join Conference" onclick="joinRoom();" class="join btn btn-success" \>
                     <input type="text" id="slug">
-                    <input type="button" value="Quit Conference" onclick="quitRoom();" class="quit" \>
+                    <input type="button" value="Quit Conference" onclick="quitRoom();" class="quit btn btn-danger" \>
                 </div>
-                <div class="video-container"></div>
+
+                <div class="well">
+                    <div class="messages"></div>
+                    <div class="video-container"></div>
+                </div>
 
                 <div class="messages">
                     <div id="messages" contenteditable></div>

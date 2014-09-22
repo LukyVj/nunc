@@ -57,8 +57,12 @@ window.joinRoom = function (theRoom) {
 
 // if the local stream (webcam) is ready 
 if (!window.localStreamReady) {
-	alert("local media is not ready");
+	$('.well .messages').empty().append('<span class="alert alert-danger">Local media is not ready !</span>')
 	return;
+}
+else{
+	$('.well .messages').empty();
+
 }
 
 // then when are ready to join the conference room called "myMeetingRoom"
@@ -132,6 +136,7 @@ document.querySelector(".join").style.display = "none";
 
 //  and show "Quit Conference" button
 document.querySelector(".quit").style.display = "inline";
+
 });
 
 /*
@@ -173,6 +178,8 @@ autoplay: true,
 // video switch to fullscreen when user click on it
 fullscreen: true
 });
+
+
 });
 
 /*
@@ -187,9 +194,12 @@ BistriConference.detachStream(remoteStream);
 
 // we open a session on the signaling server
 BistriConference.connect();
+$('.well .messages').empty();
 
 }
 
+
+//// MESSAGES ///// 
 
 // Set RTC options.
 var rtcOpts = {
