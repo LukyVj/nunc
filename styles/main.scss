@@ -1,4 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300);
+@import 'core/_mixins.scss';
+@import 'core/typography.scss';
+@import 'communication/_communication.scss';
 
 $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
@@ -6,6 +8,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 @import "buttons.scss";
+
 
 
 /* Space out content a bit */
@@ -22,10 +25,13 @@ body {
     font-family: 'Open Sans', helvetica neue, sans-serif;
 }
 
+canvas, img.color-bg{
+    display: none;
+}
+
 .container.main-view{
     margin: auto; 
     float: none;
-    display: none;
 }
 // 
 .nunc-hello, 
@@ -45,18 +51,20 @@ body {
         content:'';
         display: block;
         position: absolute; 
-        height: 100%; 
+        height: 65%; 
         width: 100%; 
         z-index: 1;
-        background: url(http://38.media.tumblr.com/facc96f9c1a78b983bf1624f5f0e70d1/tumblr_n7qhtcBPvQ1sfie3io1_1280.jpg) no-repeat bottom center;
+        background: url(http://38.media.tumblr.com/facc96f9c1a78b983bf1624f5f0e70d1/tumblr_n7qhtcBPvQ1sfie3io1_1280.jpg) no-repeat top center;
         background-size: cover;
     }
 
     .jumbotron{
+        transition: background .3s ease, height .4s ease .5s ;
         position: absolute;
         z-index: 3;
         bottom: 0;
         width: 100%;
+        height: 100%;
         background: #7AB1BB;
         box-shadow: 0 -20px 0 0 rgba(#7AB1BB, .2),
         0 -16px 0 0 rgba(#7AB1BB, .4), 
@@ -65,26 +73,72 @@ body {
         0 -6px 0 0 rgba(#7AB1BB, 1);
         color: #F5F1E7;
         margin: 0;
+        border-radius: 0;
 
         h1{
             font-weight: 800;
         }
 
+        .jumbotron__title{
+            @include centered();
+            transition: all .4s ease .2s;
+        }
+
 
         .nunc-start{
-            position: absolute; 
-            right: 0; 
-            margin: -10em 3em;
+
 
             .btn{
                 font-size: 3em;
+                transition: opacity .4s ease 1.5s ;
+                opacity: 0;
             }
         }
     }
 }
 
-
+// Page Ready
+.container.main-view{
+    &.ready{
+        .nunc-hello{
+            .jumbotron{
+                height: 45%;
+                transition: background .3s ease, height 1s ease .5s ;
+                
+                .jumbotron__title{
+                    position: absolute;
+                    bottom: 1em;
+                    left: 13em;              
+                }
+                .nunc-start{
+                    position: absolute; 
+                    right: 0; 
+                    margin: 4em 3em;
+                    .btn{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
 
 .nunc-communication{
     display: none;
 }
+
+// Well 
+.well{
+    min-height: 420px;
+    margin-top: 1em;
+}
+
+#messages{
+    position: fixed; 
+    right: 0; 
+    top: 0; 
+    height: 100%;
+    min-width: 240px;
+    background: rgba(white, .7)
+}
+

@@ -8,6 +8,7 @@
 onBistriConferenceReady = function () {
 
 
+
 	var root = location.protocol + '//' + location.host;
 
 	var st = Math.random().toString(36).substring(7);
@@ -60,7 +61,10 @@ else{
 
 // then when are ready to join the conference room called "myMeetingRoom"
 BistriConference.joinRoom(theRoom);
-console.log('Room joined : ' + theRoom)
+console.log('Room joined : ' + theRoom);
+
+messages();
+
 };
 
 /*
@@ -190,49 +194,9 @@ BistriConference.detachStream(remoteStream);
 BistriConference.connect();
 $('.well .messages').empty();
 
+
+
+
+
 }
-
-
-//// MESSAGES ///// 
-
-// Set RTC options.
-var rtcOpts = {
-	room: $('.room-log').val(),
-	signaller: '//switchboard.rtc.io',
-	capture: false
-};
-
-// call RTC module
-var rtc = RTC(rtcOpts);
-
-// A contenteditable element to show our messages
-var messages = document.getElementById('messages');
-
-// Bind to events happening on the data channel
-function bindDataChannelEvents(id, channel, attributes, connection) {
-
-// Receive message
-channel.onmessage = function (evt) {
-	messages.innerHTML = evt.data;
-};
-
-// Send message
-messages.onkeyup = function () {
-	channel.send(this.innerHTML);
-};
-}
-
-// Start working with the established session
-function init(session) {
-	session.createDataChannel('chat', {
-		ordered: true,
-		maxRetransmits: 12
-	});
-	session.on('channel:opened:chat', bindDataChannelEvents);
-}
-
-// Detect when RTC has established a session
-rtc.on('ready', init);
-
-
 
